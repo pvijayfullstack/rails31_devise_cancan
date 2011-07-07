@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+cybercat_role = Role.create([{ name: 'admin' }, { name: 'sale' }])
+cybercat_user = User.create([{ email: 'tho@cybercat.ca', password: 'duytho', password_confirmation: 'duytho' , cyber: 'true' }])
+
