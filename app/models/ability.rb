@@ -29,10 +29,12 @@ class Ability
 
     if user.cyber?
       can :manage, :all
-    #elsif user.role? :admin
-    #  can :manage, [Banner, Client]
+      can :see_timestamps, User
+    elsif user.role? :admin
+      can :manage, [User]
+      can :see_timestamps, User
     #elsif user.role? :sale
     #  can :read, [Banner, Client]
-    #end
+    end
   end
 end

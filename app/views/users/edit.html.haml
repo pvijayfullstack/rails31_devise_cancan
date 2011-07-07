@@ -1,0 +1,16 @@
+%h3= @user == @current_user ? "Your Account Settings" : "Edit User"
+ 
+= form_for(@user, :html => { :method => :put }) do |f|
+	= render :partial => 'user_fields', :locals => { :f => f }
+
+	%p= f.label :password
+	%p= f.password_field :password
+ 
+	%p= f.label :password_confirmation
+	%p= f.password_field :password_confirmation
+ 
+	%p= f.label :current_password
+	%p= f.password_field :current_password
+ 
+	%p= f.submit "Update"
+= link_to "Back", :back
