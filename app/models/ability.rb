@@ -26,15 +26,14 @@ class Ability
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
     user ||= User.new
-
     if user.cyber?
       can :manage, :all
       can :see_timestamps, User
     elsif user.role? :admin
-      can :manage, [User]
+      can :manage, [User, Banner, Company]
       can :see_timestamps, User
-    #elsif user.role? :sale
-    #  can :read, [Banner, Client]
+    elsif user.role? :sale
+      can :read, [Banner, Company]
     end
   end
 end

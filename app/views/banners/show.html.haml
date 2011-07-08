@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @banner.name
+
+= link_to 'Edit', edit_banner_path(@banner)
+\|
+= link_to 'Back', banners_path

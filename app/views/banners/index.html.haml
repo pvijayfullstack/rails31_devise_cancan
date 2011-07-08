@@ -1,0 +1,19 @@
+%h1 Listing banners
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @banners.each do |banner|
+    %tr
+      %td= banner.name
+      %td= link_to 'Show', banner
+      %td= link_to_if(can?(:update, banner), 'Edit', edit_banner_path(banner))
+      %td= link_to_if(can?(:destroy, banner), 'Destroy', banner, :confirm => 'Are you sure?', :method => :delete)
+
+%br
+
+= link_to 'New Banner', new_banner_path

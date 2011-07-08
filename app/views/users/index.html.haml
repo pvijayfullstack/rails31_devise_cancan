@@ -1,12 +1,12 @@
 %table
   %tbody
-  - @users.each do |u| 
+  - @users.each do |user| 
     %tr
-      %td= link_to_if(can?(:read, User), "#{u.first_name} #{u.last_name}", user_path(u.id))
-      %td= u.email
-      %td= u.roles.collect{|r| r.name}
-      %td= link_to_if(can?(:edit, User), image_tag("pen_alt_stroke_12x12.png"), edit_user_path(u.id))
-      %td= link_to_if(can?(:delete, u), image_tag("x_14x14.png"), u, :confirm => "Are you sure?", :method => :delete)
+      %td= link_to_if(can?(:read, User), "#{user.first_name} #{user.last_name}", user_path(user))
+      %td= user.email
+      %td= user.roles.collect{|r| r.name}
+      %td= link_to_if(can?(:edit, user), image_tag("pen_alt_stroke_12x12.png"), edit_user_path(user))
+      %td= link_to_if(can?(:delete, user), image_tag("x_14x14.png"), user, :confirm => "Are you sure?", :method => :delete)
 
 %ul.hmenu
   = link_to_if( can?(:create, User), "Create new user", new_user_path )

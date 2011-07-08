@@ -1,4 +1,8 @@
 Dolbec::Application.routes.draw do
+  resources :companies
+
+  resources :banners
+
   devise_for :users,  :controllers => { :registrations => "users/registrations" }
   resources  :users
 
@@ -51,7 +55,7 @@ Dolbec::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "users#index"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

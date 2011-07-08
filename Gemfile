@@ -33,3 +33,5 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'cancan'
 gem 'will_paginate', '~>3.0.beta'
+gem 'inherited_resources'
+
