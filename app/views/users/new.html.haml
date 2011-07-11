@@ -1,6 +1,7 @@
 %h2 Register User
  
 = form_for(@user) do |f|
+  = errors_for(@user, "Opps, unable to add new user").html_safe
   = render :partial => 'user_fields', :locals => { :f => f } 
  
   %p= f.label :password 
