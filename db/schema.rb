@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110712131355) do
+ActiveRecord::Schema.define(:version => 20110712192723) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20110712131355) do
     t.integer  "banner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lock_version"
   end
 
   create_table "companies", :force => true do |t|
