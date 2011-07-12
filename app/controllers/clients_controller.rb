@@ -2,7 +2,6 @@ class ClientsController < InheritedResources::Base
   load_and_authorize_resource
   after_filter :destroy_import_client_session, :only => [:create, :update]
   before_filter :destroy_session_key, :only => [:index, :show]
-  before_filter :find_client_and_lock, :only => [:update, :create, :edit]
 
   def suggest
     import_client = ImportClient.find(params[:import_id])
@@ -51,9 +50,5 @@ class ClientsController < InheritedResources::Base
 
   def destroy_session_key 
     session[:import_client] = nil
-  end
-
-  def find_client_and_lock
-    @client = Client.find(params[:id], :lock => true)
   end
 end
