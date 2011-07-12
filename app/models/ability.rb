@@ -30,7 +30,7 @@ class Ability
       can :manage, :all
       can :see_timestamps, User
     elsif user.role? :admin
-      can :manage, [User, Role, Banner, Company]
+      can :manage, [User, Role, Banner, Company, Client, ImportClient]
       can :see_timestamps, User
     elsif user.role? :sale
       can :read, [Banner, Company]

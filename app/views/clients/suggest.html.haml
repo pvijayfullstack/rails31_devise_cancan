@@ -1,0 +1,27 @@
+%h1 Suggestion clients
+
+%table
+  %tr
+    %th Name
+    %th Address
+    %th City
+    %th Postal code
+    %th Phone
+    %th Banner
+    %th
+    %th
+
+  - @clients.each do |client|
+    %tr
+      %td= client.name
+      %td= client.address
+      %td= client.city
+      %td= client.postal_code
+      %td= client.phone
+      %td= client.banner_id
+      %td= @import_id
+      %td= link_to 'Update', update_exist_client_path(client)
+
+%br
+
+= link_to 'Create New Client', bring_in_clients_path

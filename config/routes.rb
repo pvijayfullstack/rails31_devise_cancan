@@ -1,4 +1,16 @@
 Dolbec::Application.routes.draw do
+  resources :clients do
+    collection do
+      get 'bring_in'
+      get 'suggest'
+    end
+    member do 
+      get 'update_exist'
+    end
+  end
+
+  resources :import_clients
+
   resources :companies
 
   resources :banners

@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Company:
+  = @import_client.company_id
+%p
+  %b Client no:
+  = @import_client.client_no
+%p
+  %b Active:
+  = @import_client.active
+%p
+  %b Sort key:
+  = @import_client.sort_key
+%p
+  %b Name:
+  = @import_client.name
+%p
+  %b Address:
+  = @import_client.address
+%p
+  %b City:
+  = @import_client.city
+%p
+  %b Postal code:
+  = @import_client.postal_code
+%p
+  %b Phone:
+  = @import_client.phone
+%p
+  %b New:
+  = @import_client.new
+
+= link_to 'Edit', edit_import_client_path(@import_client)
+\|
+= link_to 'Back', import_clients_path

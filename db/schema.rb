@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110708130416) do
+ActiveRecord::Schema.define(:version => 20110712131355) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -18,8 +18,35 @@ ActiveRecord::Schema.define(:version => 20110708130416) do
     t.datetime "updated_at"
   end
 
+  create_table "clients", :force => true do |t|
+    t.boolean  "active"
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "postal_code"
+    t.string   "phone"
+    t.integer  "banner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "companies", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "import_clients", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "client_no"
+    t.boolean  "active"
+    t.string   "sort_key",    :limit => 25
+    t.string   "name",        :limit => 50
+    t.string   "address",     :limit => 100
+    t.string   "city",        :limit => 50
+    t.string   "postal_code", :limit => 12
+    t.string   "phone",       :limit => 12
+    t.boolean  "new"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,6 +60,14 @@ ActiveRecord::Schema.define(:version => 20110708130416) do
   create_table "roles_users", :id => false, :force => true do |t|
     t.integer "role_id"
     t.integer "user_id"
+  end
+
+  create_table "traces", :force => true do |t|
+    t.integer  "client_id"
+    t.integer  "company_id"
+    t.integer  "client_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

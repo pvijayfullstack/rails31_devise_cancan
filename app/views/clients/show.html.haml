@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Active:
+  = @client.active
+%p
+  %b Name:
+  = @client.name
+%p
+  %b Address:
+  = @client.address
+%p
+  %b City:
+  = @client.city
+%p
+  %b Postal code:
+  = @client.postal_code
+%p
+  %b Phone:
+  = @client.phone
+%p
+  %b Banner:
+  = @client.banner_id
+
+= link_to 'Edit', edit_client_path(@client)
+\|
+= link_to 'Back', clients_path

@@ -1,0 +1,39 @@
+%h1 Listing import_clients
+
+%table
+  %tr
+    %th Company
+    %th Client no
+    %th Active
+    %th Sort key
+    %th Name
+    %th Adress
+    %th City
+    %th Postal code
+    %th Phone
+    %th New
+    %th
+    /%th
+    /%th
+    %th
+
+  - @import_clients.each do |import_client|
+    %tr
+      %td= import_client.company_id
+      %td= import_client.client_no
+      %td= import_client.active
+      %td= import_client.sort_key
+      %td= import_client.name
+      %td= import_client.address
+      %td= import_client.city
+      %td= import_client.postal_code
+      %td= import_client.phone
+      %td= import_client.new
+      %td= link_to 'Show', import_client
+      /%td= link_to 'Edit', edit_import_client_path(import_client)
+      /%td= link_to 'Destroy', import_client, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to_if import_client.new?, 'Import', suggest_clients_path(:import_id => import_client) 
+
+%br
+
+= link_to 'New Import client', new_import_client_path
