@@ -45,7 +45,7 @@ module Dolbec
     config.assets.enabled = true
 
     # Define number of items per page for pagination with will_paginate
-    config.per_page = 20
+    config.per_page = 15
   end
 end
 

@@ -1,4 +1,7 @@
 %h1 Listing import_clients
+=form_tag import_clients_path, :method => :get do
+  = text_field_tag :q, params[:q]
+  = submit_tag 'Search'
 = page_entries_info @import_clients
 %table
   %tr
