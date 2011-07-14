@@ -1,4 +1,7 @@
 Dolbec::Application.routes.draw do
+
+  root :to => "home#index"
+
   resources :clients do
     collection do
       get 'bring_in'
@@ -9,13 +12,18 @@ Dolbec::Application.routes.draw do
     end
   end
 
-  resources :import_clients
+  resources :import_clients do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :companies
 
   resources :banners
 
-  devise_for :users,  :controllers => { :registrations => "users/registrations" }
+  #devise_for :users,  :controllers => { :registrations => "users/registrations" }
+  devise_for :users
   resources  :users
 
   # The priority is based upon order of creation:
@@ -67,7 +75,6 @@ Dolbec::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

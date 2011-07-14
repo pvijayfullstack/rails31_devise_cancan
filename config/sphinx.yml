@@ -1,0 +1,4 @@
+development:
+  morphology: libstemmer_fr
+  mem_limit: 128M
+  charset_type: utf-8

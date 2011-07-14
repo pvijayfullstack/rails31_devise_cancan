@@ -1,5 +1,8 @@
-%h1 Listing import_clients
-= page_entries_info @import_clients
+%h1 Search result 
+=form_tag search_import_clients_path, :method => :get do
+  = text_field_tag :q, params[:q]
+  = submit_tag 'Search'
+
 %table
   %tr
     %th Company
@@ -17,7 +20,7 @@
     /%th
     %th
 
-  - @import_clients.each do |import_client|
+  - @results.each do |import_client|
     %tr
       %td= import_client.company_id
       %td= import_client.client_no
@@ -34,8 +37,3 @@
       /%td= link_to 'Destroy', import_client, :confirm => 'Are you sure?', :method => :delete
       %td= link_to_if import_client.new?, 'Import', suggest_clients_path(:import_id => import_client) 
 
-%br
-
-= will_paginate @import_clients
-
-= link_to 'New Import client', new_import_client_path

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110712192723) do
+ActiveRecord::Schema.define(:version => 20110713175656) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20110712192723) do
 
   create_table "import_clients", :force => true do |t|
     t.integer  "company_id"
-    t.integer  "client_no"
+    t.string   "client_no",   :limit => 20
     t.boolean  "active"
     t.string   "sort_key",    :limit => 25
     t.string   "name",        :limit => 50
