@@ -73,6 +73,8 @@ GEM
       factory_girl (~> 2.0.0.beta)
       rails (>= 3.0.0)
     ffi (1.0.9)
+    foreigner (1.0.3)
+      activerecord (>= 3.0.0)
     gherkin (2.4.5)
       json (>= 1.4.6)
     haml (3.1.2)
@@ -200,6 +202,7 @@ DEPENDENCIES
   devise
   execjs
   factory_girl_rails
+  foreigner
   haml (>= 3.0.0)
   haml-rails
   inherited_resources

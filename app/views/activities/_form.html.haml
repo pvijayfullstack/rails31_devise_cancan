@@ -5,9 +5,20 @@
       %ul
         - @activity.errors.full_messages.each do |msg|
           %li= msg
-
   .field
     = f.label :note
     = f.text_field :note
+  .field
+    = f.label :activity_type_id
+    = f.collection_select :activity_type_id, ActivityType.all, :id, :name
+  .field
+    = f.label :result_type_id
+    = f.collection_select :result_type_id, ResultType.all, :id, :name
+  .field
+    = f.label :user_id
+    = f.collection_select :user_id, User.all, :id, :first_name
+  .field
+    = f.label :client_id
+    = f.collection_select :client_id, Client.all, :id, :name
   .actions
     = f.submit 'Save'

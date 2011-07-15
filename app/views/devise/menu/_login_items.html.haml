@@ -1,6 +1,6 @@
 - if user_signed_in?
   %li= current_user.email
-  %li= link_to('Logout', destroy_user_session_path, :method => 'delete')
+  %li= link_to(t('general.logout'), destroy_user_session_path, :method => 'delete')
 - else
-  %li= link_to('Login', new_user_session_path, :method => 'get')
+  %li= link_to(t('general.login'), new_user_session_path, :method => 'get')
 

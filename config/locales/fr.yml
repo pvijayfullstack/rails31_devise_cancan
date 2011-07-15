@@ -1,0 +1,69 @@
+fr:
+  general:
+    update: Mettre à jour
+    save: Sauvegarder
+    create: Créer
+    back: Retour
+    login: Connexion
+    logout: Déconnexion
+    your_account_settings: Votre compte d'usager
+    edit_user: Éditer usager
+    new_banner: Nouveau bannière
+  activerecord:
+    models:
+      client: client
+      user: usager
+    errors:
+    attributes:
+      banner:
+        name: Nom
+      client:
+        name: Nom
+        active: actif
+        address: adresse
+        city: ville
+        postal_code: code postal
+        phone: no. téléphone
+        banner_id: bannière
+        user: Usager
+        note: Note
+
+      import_clients:
+        company_id: compagnie
+        client_no: No. client
+        active: actif
+        name: nom
+        address: adresse
+        city: ville
+        postal_code: code postal
+        phone: Téléphone
+        
+      companies:
+        name: nom
+      result_type:
+        name: Nom
+        user: Usager
+        note: Note
+      activity_type:
+        name: Nom
+        user: Usager
+        note: Note
+      result_type:
+        name: Nom
+        user: Usager
+        note: Note
+      activity:
+        name: Nom
+        user: Usager
+        note: Note
+        activity_type_id: Type d'acvitité
+        result_type_id: Résultat
+      
+      user:
+        first_name: Prénom
+        last_name: Nom
+        email: Courriel
+        role: Profile
+        password: Mot de passe
+        password_confirmation: Confirmation de mot de passe
+        current_password: Mot de passe courant

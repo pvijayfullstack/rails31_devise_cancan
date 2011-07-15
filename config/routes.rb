@@ -1,5 +1,11 @@
 Dolbec::Application.routes.draw do
 
+  resources :activities
+
+  resources :activity_types
+
+  resources :result_types
+
   root :to => "home#index"
 
   resources :clients do

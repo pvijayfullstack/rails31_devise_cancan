@@ -10,7 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713175656) do
+ActiveRecord::Schema.define(:version => 20110715135200) do
+
+  create_table "activities", :force => true do |t|
+    t.string   "note"
+    t.integer  "activity_type_id"
+    t.integer  "result_type_id"
+    t.integer  "user_id"
+    t.integer  "client_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "activity_types", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active",     :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -48,6 +65,13 @@ ActiveRecord::Schema.define(:version => 20110713175656) do
     t.string   "postal_code", :limit => 12
     t.string   "phone",       :limit => 12
     t.boolean  "new"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "result_types", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active",     :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

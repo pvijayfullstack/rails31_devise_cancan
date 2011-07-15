@@ -1,4 +1,4 @@
-%h3= @user == @current_user ? "Your Account Settings" : "Edit User"
+%h3= @user == @current_user ? t("general.your_account_settings") : t("general.edit_user")
  
 = form_for(@user, :html => { :method => :put }) do |f|
   = errors_for(@user, "Opps, unable to add new user").html_safe
@@ -13,5 +13,5 @@
   %p= f.label :current_password
   %p= f.password_field :current_password
  
-  %p= f.submit "Update"
-= link_to "Back", :back
+  %p= f.submit t("general.update")
+= link_to t("general.back"), :back

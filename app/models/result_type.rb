@@ -4,7 +4,5 @@ class ResultType < ActiveRecord::Base
 
   validate :name, :presence => true,
                   :unique => true
-  validate :activity_type_id, :presence => true,
-                              :unique   => true
 end
 

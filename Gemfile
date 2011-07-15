@@ -36,6 +36,7 @@ gem 'cancan'
 gem 'will_paginate', '~>3.0.beta'
 gem 'inherited_resources'
 gem 'rspec-rails', :group => [:development, :test]
+gem 'foreigner'
 group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
