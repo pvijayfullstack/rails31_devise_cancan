@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Note:
+  = @activity.note
+
+= link_to 'Edit', edit_activity_path(@activity)
+\|
+= link_to 'Back', activities_path

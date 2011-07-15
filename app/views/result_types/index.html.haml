@@ -1,0 +1,21 @@
+%h1 Listing result_types
+
+%table
+  %tr
+    %th Name
+    %th Active
+    %th
+    %th
+    %th
+
+  - @result_types.each do |result_type|
+    %tr
+      %td= result_type.name
+      %td= result_type.active
+      %td= link_to 'Show', result_type
+      %td= link_to 'Edit', edit_result_type_path(result_type)
+      %td= link_to 'Destroy', result_type, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Result type', new_result_type_path

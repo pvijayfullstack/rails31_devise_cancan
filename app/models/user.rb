@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_and_belongs_to_many :roles
+  has_many :activities
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :first_name, :last_name, :cell_phone, :cyber, :email, :password, :password_confirmation, :remember_me, :role_ids

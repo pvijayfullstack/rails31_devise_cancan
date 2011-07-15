@@ -33,8 +33,6 @@
       %td= import_client.phone
       %td= import_client.new
       %td= link_to 'Show', import_client
-      /%td= link_to 'Edit', edit_import_client_path(import_client)
-      /%td= link_to 'Destroy', import_client, :confirm => 'Are you sure?', :method => :delete
       %td= link_to_if import_client.new?, 'Import', suggest_clients_path(:import_id => import_client) 
 
 %br

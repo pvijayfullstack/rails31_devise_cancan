@@ -2,6 +2,7 @@ class Client < ActiveRecord::Base
   belongs_to :banner
   has_many :traces
   has_many :companies, :through => :traces
+  has_many :activities
 
   # for pagination with will_paginate
   cattr_reader :per_page

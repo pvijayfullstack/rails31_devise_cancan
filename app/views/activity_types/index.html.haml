@@ -1,0 +1,21 @@
+%h1 Listing activity_types
+
+%table
+  %tr
+    %th Name
+    %th Active
+    %th
+    %th
+    %th
+
+  - @activity_types.each do |activity_type|
+    %tr
+      %td= activity_type.name
+      %td= activity_type.active
+      %td= link_to 'Show', activity_type
+      %td= link_to 'Edit', edit_activity_type_path(activity_type)
+      %td= link_to 'Destroy', activity_type, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Activity type', new_activity_type_path

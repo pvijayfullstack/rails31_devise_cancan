@@ -28,10 +28,11 @@ class Ability
     user ||= User.new
     if user.cyber?
       can :manage, :all
-      can :see_timestamps, User
     elsif user.role? :admin
       can :manage, [User, Role, Banner, Company, Client, ImportClient]
-      can :see_timestamps, User
+    elsif user.role? :client_admin
+      can :read, [ImportClient]
+      can :manage, [Client, Banner, Company]
     elsif user.role? :sale
       can :read, [Banner, Company]
     end

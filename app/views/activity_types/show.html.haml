@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @activity_type.name
+%p
+  %b Active:
+  = @activity_type.active
+
+= link_to 'Edit', edit_activity_type_path(@activity_type)
+\|
+= link_to 'Back', activity_types_path
