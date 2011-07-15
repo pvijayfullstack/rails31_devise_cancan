@@ -24,6 +24,7 @@ gem 'uglifier'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem "rails-i18n"
 gem "devise"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
