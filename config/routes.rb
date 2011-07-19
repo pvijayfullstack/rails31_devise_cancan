@@ -1,4 +1,4 @@
-Dolbec::Application.routes.draw do
+Rails31DeviseCancan::Application.routes.draw do
 
   resources :activities
 

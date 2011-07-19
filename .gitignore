@@ -7,3 +7,4 @@ tmp/
 *.swo
 *.lck
 *.pid
+solr/data/

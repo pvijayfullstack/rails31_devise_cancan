@@ -3,7 +3,7 @@ class ImportClientsController < InheritedResources::Base
   def index
     search = Sunspot.search(ImportClient) do
       keywords(params[:q])
-      paginate(:page => params[:page], :per_page=> Dolbec::Application.config.per_page)
+      paginate(:page => params[:page], :per_page=> Rails31DeviseCancan::Application.config.per_page)
     end
     @import_clients = search.results
 

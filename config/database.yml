@@ -6,16 +6,16 @@
 commun: &commun
   adapter: mysql2
   encoding: utf8
-  username: dolbec
-  password: dolbec
+  username: rails31_devise_cancan
+  password: rails31_devise_cancan
   host: localhost
 
 development:
   adapter: mysql2
   encoding: utf8
-  database: dolbec_dev
-  username: dolbec
-  password: dolbec
+  database: rails31_devise_cancan_dev
+  username: rails31_devise_cancan
+  password: rails31_devise_cancan
   host: localhost
 
 #  adapter: sqlite3
@@ -29,9 +29,9 @@ development:
 test: &test
   adapter: mysql2
   encoding: utf8
-  database: dolbec_test
-  username: dolbec
-  password: dolbec
+  database: rails31_devise_cancan_test
+  username: rails31_devise_cancan
+  password: rails31_devise_cancan
   host: localhost
 
 
@@ -43,9 +43,9 @@ test: &test
 production:
   adapter: mysql2
   encoding: utf8
-  database: dolbec_prod
-  username: dolbec
-  password: dolbec
+  database: rails31_devise_cancan_prod
+  username: rails31_devise_cancan
+  password: rails31_devise_cancan
   host: localhost
 
 

@@ -6,19 +6,7 @@ class Client < ActiveRecord::Base
 
   # for pagination with will_paginate
   cattr_reader :per_page
-  @@per_page = Dolbec::Application.config.per_page
-
-  # Define index for thinking sphinx search engine
-  #define_index do
-  #  indexes name, :sortable => true
-  #  indexes address
-  #  indexes city, :sortable => true
-  #  indexes postal_code
-  #  indexes phone
-  #  indexes banner(:name), :as => :banner, :sortable => true
-
-  #  has banner_id, created_at, updated_at
-  #end
+  @@per_page = Rails31DeviseCancan::Application.config.per_page
 
   def self.exist_by_name? name
     return true unless self.where('name LIKE ?', '%' + name + '%').empty? #self.find_by_name(name.downcase)
